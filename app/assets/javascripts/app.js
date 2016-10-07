@@ -19,7 +19,13 @@ MyApp.config(function($stateProvider, $urlRouterProvider){
 })
 
 
+MyApp.config(['RestangularProvider',
+  function(RestangularProvider) {
 
+    RestangularProvider.setBaseUrl('/api/v1');
+    RestangularProvider.setRequestSuffix('.json');
+
+}]);
 
 
 MyApp.factory('_', ['$window', function($window) {
